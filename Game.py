@@ -89,7 +89,7 @@ def inventoryAccess(playerInv):
 while(True):
 	if(area == "0"):
 		#Menu of the game.
-		print("Welcome to (Name of Game TBD) \n Type in a number to proceed \n 1. Start \n 2. Quit")
+		print("Welcome to An Insignificant Tale \n Type in a number to proceed \n 1. Start \n 2. Quit")
 		userInput = input("")
 
 		if(userInput == "1"):
@@ -795,6 +795,7 @@ while(True):
 							print("Guard: 'As crowded as the area is, the place is to busy for anyone to look at some alley.'")
 							time.sleep(1)
 							print(name + ": 'Fair enough.'")
+							print("Guard: 'Anything else?'")
 						if(playerInv2a == "2"):
 							print("Guard: 'The market is usually crowded.'")
 							time.sleep(1)
@@ -808,9 +809,12 @@ while(True):
 							print("-NEW LOCATION: BLACKSMITH")
 							print("-NEW LOCATION: GENERAL STORE")
 							print("-NEW LOCATION: CHURCH")
+							smithDialogue = 1
+							genDialogue = 1
+							churchDialogue = 1
 							time.sleep(1)
 							print("Guard: 'Anything else?'")
-
+							
 				if(playerInv2 == "2"):
 					print("Guard: 'Are you sure?'")
 					time.sleep(1)
@@ -824,11 +828,16 @@ while(True):
 						print("Guard: 'Okay. Take care...'")
 						time.sleep(1)
 						area = "100.1"
+
 					if(playerInvExit == "2"):
 						time.sleep(1)
 						print(name + ": 'On second though let me look around some more.'")
 						time.sleep(1)
 						print("Guard: 'Very well.'")
+
+
+
+#------------------------AREA 5 BLACKSMITH------------------------------
 
 #-----------------------ISOLATED AREAS----------------------------------
 	if(area == "100"):
