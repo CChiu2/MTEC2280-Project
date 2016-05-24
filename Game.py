@@ -56,7 +56,20 @@ def inventoryAccess(playerInv):
 							entryDescription = ": Did not see or hear anything while tending the store."
 						if('notepadEntry[countNote] == "Miras Testimony(Theft)"'):
 							entryDescription = ": While the store suffer no robbery, Mira claims she sees a young boy exiting Gendel's shop on the day of the murder."
-
+						if('notepadEntry[countNote] == "Lawrance"'):
+							entryDescription = ": A young boy who ran from his orphanage and shortly taken in by Father Cornealius but not an offically a church member."
+						if('notepadEntry[countNote] == "Father Merwin(VICTIM)"'):
+							entryDescription = ": The victim of the case. Burnt in the face but was killed upon repeated strikes to the head with a blunt object."
+						if('notepadEntry[countNote] == "Lawrances Testimony"'):
+							entryDescription = ": Did not see anything but was aware that there was a murder."
+						if('notepadEntry[countNote] == "Father Cornealiuss Testimony"'):
+							entryDescription = ": Claims no one stole from the church."
+						if('notepadEntry[countNote] == "Miras Testimony on Merwin"'):
+							entryDescription = ": Mira recalls Merwin as a young, ambitious and somewhat overzealous man. Perhaps a tad judgement to non-believers."
+						if('notepadEntry[countNote] == "Miras Testimony on Father Cornealius"'):
+							entryDescription = ": Mira recalls Father Cornealius spending a great deal of time with a young lady a decade ago."
+						if('notepadEntry[countNote] == "Miras Testimony on Lawrance"'):
+							entryDescription = ": Mira recalls several rumors about Lawrance being kicked out of his orphanage as a troubled youth. "
 
 						print("_________________________________")
 						countNote = 0
@@ -194,7 +207,7 @@ while(True):
 			time.sleep(1)
 			print(name + ": 'Did you show it to him?'")
 			time.sleep(1)
-			print("Coleridge: 'Me? No, I had someone did it. Anyway, the corpse is Merwin, no doubts about it.'")
+			print("Coleridge: 'Yeah but I had most of the face covered and just told him it was gruesome. He still manage to identify him.'")
 			time.sleep(1)
 			print(name + ": 'Okay, let me just change and we'll head down to the barracks. Is the father still there?'")
 			time.sleep(1)
@@ -215,7 +228,7 @@ while(True):
 			time.sleep(1)
 			print("Coleridge: 'I know, too weird to be coincendence, I took him down to the morgue on a hunch.'")
 			time.sleep(1)
-			print("Coleridge: 'It paid off, our victim, Merwin.'")
+			print("Coleridge: 'It paid off, our victim, Merwin. I covered up the ugly parts, probably too much for the man but he still manage to identify him.'")
 			time.sleep(1)
 			print(name + ": 'Is Father Cornealius still there?'")
 			time.sleep(1)
@@ -1122,8 +1135,10 @@ while(True):
 		gendelInterview = True
 #-------------------AREA 5 INTERVIEW: GENDEL THE BLACKSMITH--------------
 		while(gendelInterview == True):
+			print("You may access inventory during interviews")
 			print("1. [Ask him about the stolen trinket] \n2. [Ask about the case] \n3. [Look around the shop] \n4. [Done]")
 			interviewA5a == input("")
+			inventoryAccess(interviewA5a)
 
 			if(interviewA5a == "1"):
 				print(name + ": 'So you were talking about something being stolen from you?'")
@@ -1356,8 +1371,11 @@ while(True):
 		print("-INTERVIEW BEGIN-")
 		miraInterview2 = True
 		while(miraInterview2 == True)
+			print("You may access inventory during interview")
+			time.sleep(1)
 			print("1. [Ask about Father Merwin] \n2. [Ask about Father Cornealius] \n3.[Ask about Lawrance] \n4. [Done]")
 			interviewA6b = input("")
+			inventoryAccess(interviewA6b)
 
 			if(interviewA6b == "1"):
 				print(name + ": 'What was Father Merwin like?'")
@@ -1509,8 +1527,11 @@ while(True):
 #-----------AREA 6 INTERVIEW: MIRA THE GENERAL SHOPKEEPER--------------
 		while(miraInterview == True):
 			if(blacksmith == False):
+				print("You may access inventory during interview")
+				time.sleep(1)
 				print("1. [Ask her about the case] \n2. [Ask her about Coleridge] \n3. [Look around the shop] \n4. [Done]")
 				interviewA6a = input("")
+				inventoryAccess(interviewA6a)
 
 				if(interviewA6a == "1"):
 					print(name + ": 'So Mira, did you recently see anything or hear anything suspicious?'")
@@ -1561,6 +1582,7 @@ while(True):
 					while(genStore == True):
 						print("1. [Upstair Rooms] \n2. [The Store] \n3. [Storage Closet] \n4. [Basement] \n5. [Done]")
 						genStoreExplore = input("")
+						inventoryAccess(genStoreExplore)
 
 						if(genStoreExplore == "1"):
 							print("[You walk up the stairs looking around...]")
@@ -1837,6 +1859,7 @@ while(True):
 			if(blacksmith == True):
 				print("1. [Ask her about the case] \n2. [Ask her about Coleridge] \n3. [Look around the shop] \n4. [Ask about recent theft] \n5. [Done]")
 				interviewA6a = input("")
+				inventoryAccess(interviewA6a)
 
 				if(interviewA6a == "1"):
 					print(name + ": 'So Mira, did you recently see anything or hear anything suspicious?'")
@@ -1887,6 +1910,7 @@ while(True):
 					while(genStore == True):
 						print("1. [Upstair Rooms] \n2. [The Store] \n3. [Storage Closet] \n4. [Basement] \n5. [Done]")
 						genStoreExplore = input("")
+						inventoryAccess(genStoreExplore)
 
 						if(genStoreExplore == "1"):
 							print("[You walk up the stairs looking around...]")
@@ -2005,8 +2029,11 @@ while(True):
 							eidarInterview = True
 
 							while(eidarInterview == True):
+								print("You may access inventory during interview")
+								time.sleep(1)
 								print("1. [Ask about personal information] \n2.[Ask about the basement] \n3.[Ask about the case] \n4.[Done]")
 								interviewA6b = input("")
+								inventoryAccess(interviewA6b)
 
 								if(interviewA6b == "1"):
 									print(name + ": 'Sir, what's your name?'")
@@ -2292,8 +2319,11 @@ while(True):
 
 		while(lawranceInterview == True):
 			if(eidarInterviewed == False):
+				print("You may access inventory during interview")
+				time.sleep(1)
 				print("1. [Ask about the boy] \n2. [Ask about the church] \n3. [Ask about the case] \n4. [Done]")
 				interviewA7a = input("")
+				inventoryAccess(interviewA7a)
 
 				if(interviewA7a == "1"):
 					print(name + ": 'What's your name?'")
@@ -2373,8 +2403,8 @@ while(True):
 					time.sleep(1)
 					print(name + ": 'I see.'")
 					time.sleep(1)
-					print("-NOTES UPDATED:LAWRANCE'S TESTIMONY-")
-					notepadEntry.append("Lawrance's Testimony")
+					print("-NOTES UPDATED:LAWRANCES TESTIMONY-")
+					notepadEntry.append("Lawrances Testimony")
 				if(interviewA7a == "4"):
 					print(name + ": 'Well thank you for your information. You've been a big help Lawrance.'")
 					time.sleep(1)
@@ -2395,8 +2425,11 @@ while(True):
 					time.sleep(1)
 
 			if(eidarInterviewed == True):
+				print("You may access inventory during interview")
+				time.sleep(1)
 				print("1. [Ask about the boy] \n2. [Ask about the church] \n3. [Ask about the case] \n4. [Ask about the priest robe] \n5. [Done]")
 				interviewA7a = input("")
+				inventoryAccess(interviewA7a)
 
 				if(interviewA7a == "1"):
 					print(name + ": 'What's your name?'")
@@ -2477,8 +2510,8 @@ while(True):
 					time.sleep(1)
 					print(name + ": 'I see.'")
 					time.sleep(1)
-					print("-NOTES UPDATED:LAWRANCE'S TESTIMONY-")
-					notepadEntry.append("Lawrance's Testimony")
+					print("-NOTES UPDATED:LAWRANCES TESTIMONY-")
+					notepadEntry.append("Lawrances Testimony")
 					lawranceTestimony = True
 				#lawranceRobes
 				if(interviewA7a == "4"):
@@ -2542,8 +2575,11 @@ while(True):
 		cornealiusInterivew = True
 		while(cornealiusInterivew == True):
 			if(eidarInterviewed == False):
+				print("You may access inventory during interview")
+				time.sleep(1)
 				print("1. [Ask about Lawrance] \n2. [Ask about Father Merwin] \n3. [Ask about the case] \n4. [Done]")
 				interviewA7b = input("")
+				inventoryAccess(interviewA7b)
 
 				if(interviewA7b == "1"):
 					print(name + ": 'Father Cornealius, may I ask you about Lawrance?'")
@@ -2617,8 +2653,11 @@ while(True):
 					time.sleep(1)
 
 			if(eidarInterviewed == True):
+				print("You may access inventory during interview")
+				time.sleep(1)
 				print("1. [Ask about Lawrance] \n2. [Ask about Father Merwin] \n3. [Ask about the case] \n4. [Ask about the robe] \n5. [Done]")
 				interviewA7b = input("")
+				inventoryAccess(interviewA7b)
 
 				if(interviewA7b == "1"):
 					print(name + ": 'Father Cornealius, may I ask you about Lawrance?'")
@@ -2680,7 +2719,8 @@ while(True):
 						time.sleep(1)
 						print("Coleridge: 'I'm kidding, I'm kidding.'")
 						time.sleep(1)
-					notepadEntry.append("Father Cornealius's Testimony")
+						print("-NOTES UPDATED: FATHER CORNEALIUSS TESTIMONY-")
+					notepadEntry.append("Father Cornealiuss Testimony")
 				#cornealiusRobe
 				if(interviewA7b == "4"):
 					print(name + ": 'Father Cornealius, would you care to identify this robe we have?'")
@@ -2738,13 +2778,14 @@ while(True):
 #---------------------AREA 8: INTERROGATION---------------------------
 	if(area == "8"):
 		print("____________________________________________")
-		print("Welcome to Interrogation. This is the final stretch of the investigation. Here you may re-interview all of the characters you come across and eventually accuse one of them of the crime. Presenting evidence from your notes and inventory may cause the accused to be stressed leading to a more convincing conviction and a more solid answer. The lights will indicate how well the witness or accused is doing in terms of stress level with red being most stressful, yellow being mildy stressful and green being not stressful at all. Using these can help determine if the witness or accused is hiding information or lying....")
+		print("Welcome to Interrogation. This is the final stretch of the investigation. Here you may re-interview all of the characters you come across and eventually accuse one of them of the crime. Presenting evidence from your notes and inventory may cause the accused to be stressed leading to a more convincing conviction and a more solid answer. Keep in mind you may open your inventory when prompt to give an input.")
 		time.sleep(15)
 		while(True):
 			print("Captain Faust: 'So who should I bring in?'")
 			time.sleep(1)
 			print("1. Captain Faust \n2. Coleridge \n3. Messenger Boy \n4. Scholar William \n5. Gendel the Blacksmith \n6. Mira the General Shopkeeper \n7. Eidar the Homeless \n8. Father Cornealius \n9. Lawrance")
 			witnessInt = input("")
+			inventoryAccess(witnessInt)
 
 			#faustInterview
 			if(witnessInt == "1"):
@@ -2762,6 +2803,7 @@ while(True):
 				while(True):
 					print("1. [Ask for an alibi] \n2. [Review Witness Information] \n3. [Accuse] \n4. [Dismiss]")
 					intPrompt = input("")
+					inventoryAccess(intPrompt)
 
 					if(intPrompt == "1"):
 						print(name + ": 'What were you doing at the day of the murder.'")
@@ -2783,6 +2825,7 @@ while(True):
 						print("Are you sure you wish to accuse Captain Faust of the murder?")
 						print("1. Yes \n2. No")
 						accusedResponse = input("")
+						inventoryAccess(accusedResponse)
 
 						if(accusedResponse == "1")
 							print(name + ": 'Captain Faust...YOU ARE THE MURDERER!'")
@@ -2795,6 +2838,7 @@ while(True):
 							print(invArray)
 							print("TYPE IN THE EVIDENCE NAME")
 							Evidence = input("")
+							inventoryAccess(Evidence)
 							print(name + ": 'This evidence shows that! Um...well.. I...I don't know...")
 							time.sleep(1)
 							print("Captain Faust: 'GOD DAMMIT THIS IS A WASTE OF TIME. YOU GOT TO BE KIDDING ME!'")
@@ -2834,6 +2878,7 @@ while(True):
 				while(True):
 					print("1. [Ask for an alibi] \n2. [Review Witness Information] \n3. [Accuse] \n4. [Dismiss]")
 					intPrompt = input("")
+					inventoryAccess(intPrompt)
 
 					if(intPrompt == "1"):
 						print(name + ": 'Where were you during the time of the murder?'")
@@ -2857,6 +2902,7 @@ while(True):
 						print("Are you sure you wish to accuse Coleridge of the murder?")
 						print("1. Yes \n2. No")
 						accusedResponse = input("")
+						inventoryAccess(accusedResponse)
 
 						if(accusedResponse == "1")
 							print(name + ": 'Coleridge...YOU ARE THE MURDERER!'")
@@ -2866,6 +2912,7 @@ while(True):
 							print(invArray)
 							print("TYPE IN THE EVIDENCE NAME")
 							Evidence = input("")
+							inventoryAccess(Evidence)
 							print(name + ": 'THIS EVIDENCE INDICATES THAT YOU....'")
 							time.sleep(1)
 							print("Coleridge: 'Are bloody drunk kid...Captain, I think the kid needs a break...a really long one.'")
@@ -2900,6 +2947,7 @@ while(True):
 				while(True):
 					print("1. [Ask for an alibi] \n2. [Review Witness Information] \n3. [Accuse] \n4. [Dismiss]")
 					intPrompt = input("")
+					inventoryAccess(intPrompt)
 
 					if(intPrompt == "1"):
 						print(name + ": 'Where were you during the time of the murder?'")
@@ -2970,6 +3018,7 @@ while(True):
 				while(True):
 					print("1. [Ask for an alibi] \n2. [Review Witness Information] \n3. [Accuse] \n4. [Dismiss]")
 					intPrompt = input("")
+					inventoryAccess(intPrompt)
 
 					if(intPrompt == "1"):
 						print(name + ": 'What were you doing during the time of the murder?'")
@@ -3005,6 +3054,7 @@ while(True):
 							print(invArray)
 							print("TYPE IN THE EVIDENCE NAME")
 							Evidence = input("")
+
 							if(Evidence == "Gendels Rock"):
 								print("Gendel: '..Me rock...what about it?'"
 								time.sleep(1)
@@ -3057,6 +3107,7 @@ while(True):
 				while(True):
 					print("1. [Ask for an alibi] \n2. [Review Witness Information] \n3. [Accuse] \n4. [Dismiss]")
 					intPrompt = input("")
+					inventoryAccess(intPrompt)
 
 					if(intPrompt == "1"):
 						print(name + ": 'Where were you during the murder??'")
@@ -3138,6 +3189,7 @@ while(True):
 				while(True):
 					print("1. [Ask for an alibi] \n2. [Review Witness Information] \n3. [Accuse] \n4. [Dismiss]")
 					intPrompt = input("")
+					inventoryAccess(intPrompt)
 
 					if(intPrompt == "1"):
 						print(name + ": 'Eidar, would you care to tell us where you were during the murder?'")
@@ -3266,6 +3318,7 @@ while(True):
 				while(True):
 					print("1. [Ask for an alibi] \n2. [Review Witness Information] \n3. [Accuse] \n4. [Dismiss]")
 					intPrompt = input("")
+					inventoryAccess(intPrompt)
 
 					if(intPrompt == "1"):
 						print(name + ": 'Father Cornealius, where were you when Father Merwin was murderer?'")
@@ -3457,6 +3510,7 @@ while(True):
 				while(True):
 					print("1. [Ask for an alibi] \n2. [Review Witness Information] \n3. [Accuse] \n4. [Dismiss]")
 					intPrompt = input("")
+					inventoryAccess(intPrompt)
 
 					if(intPrompt == "1"):
 						print(name + ": 'What were you doing the day Father Merwin was murdered?'")
@@ -3691,10 +3745,312 @@ while(True):
 		print("[Lawrance gives a subtle nod...]")
 		time.sleep(1)
 		print(name + ": 'Let's start with what we know...'")
+		time.sleep(1)
+		print(name + ": 'Lawrance didn't run from the orphanage he was kicked out. He was a troubled youth supposedly.'")
+		time.sleep(1)
+		print(name + ": 'Father Cornealius, you took him in. Father Merwin didn't like it.'")
+		time.sleep(1)
+		print(name + ": 'But because of his respect for Father Cornealius, he abide by Lawrance living with him ..that is until..'")
+		time.sleep(1)
 		print(notepadEntry)
 		print(invArray)
 		print("TYPE IN THE EVIDENCE NAME")
 		Evidence1 = input("")
+
+		if(Evidence1 == "Miras Testimony(Theft)"):
+			print(name + ": 'You stole something and Father Merwin caught you.'")
+			time.sleep(1)
+			print("Lawrance: 'I didn't steal anything!'")
+			time.sleep(1)
+			print("Father Cornealius: 'You accuse us of murder and now accuse Lawrance of thievery?!'")
+			time.sleep(1)
+			print(name + ": 'I'm not just accusing him. I'm saying he did do it. You stole Gendel the Blacksmith's heirloom didn't you?'")
+			time.sleep(1)
+			print("Father Cornealius: 'Am I to expect solid proof or do you based it on more rumors?'")
+			time.sleep(1)
+			print(name + ": 'Why don't you let him answer father. Would we find Gendel's Rock in your possession in the church Lawrance?'")
+			time.sleep(1)
+			print("Lawrance: 'I...I-'")
+			time.sleep(1)
+			print(name + ": 'Don't take what I said the wrong way, I have yet to claim Lawrance was the killer but a thief for certain.'")
+			time.sleep(1)
+			print("Lawrance: 'I...I was never there...'")
+			time.sleep(1)
+			print(name + ": 'Really? What do you think when I tell you I have proof that you were?'")
+			time.sleep(1)
+			print(notepadEntry)
+			print(invArray)
+			print("TYPE IN THE EVIDENCE NAME")
+			Evidence2 = input("")
+
+			if(Evidence2 == "Handprint in Gendels"):
+				print(name + ": 'Gendel's place is covered in dust. Especially his storage closet.'")
+				time.sleep(1)
+				print(name + ": 'On his closet window, I found what appears to be a handprint. Too tall to be Gendel's and far too big.'")
+				time.sleep(1)
+				print(name + ": 'If we are to go down to Gendel's now and press your hand against that window, would we see something similar?'")
+				time.sleep(1)
+				print("Father Lawrance: 'Fine, I-I admit it...I stole the heirloom ..but that's all I did!'")
+				time.sleep(1)
+				print(name + ": 'And did Father Merwin caught you?'")
+				time.sleep(1)
+				print("Lawrance: 'No! Father Merwin never saw anything!'")
+				time.sleep(1)
+				print("[Coleridge leans over in a whisper]")
+				time.sleep(1)
+				print("Coleridge: 'I hate to tell ya kid but you have no evidence of when the father die.'")
+				time.sleep(1)
+				print("Coleridge: 'You can prove the kid took the rock but no indication that he was caught.'")
+				time.sleep(1)
+				print(name + ": 'That's true...'")
+				time.sleep(1)
+				print("Coleridge: 'From here on out, this is more or less a leap of faith.'")
+				time.sleep(1)
+				print(name + ": 'Perhaps all we need to do is make them confess a motivation.'")
+				time.sleep(1)
+				print("Coleridge: 'So we're just gonna make random jab at their motivation till one cracks?'")
+				time.sleep(1)
+				print(name + ": 'You have another idea?'")
+				time.sleep(1)
+				print("Coleridge: 'Nah...'")
+				time.sleep(1)
+				print("Coleridge: 'Either the kid witness the father killing another father or the kid did it himself.'")
+				time.sleep(1)
+				print("Coleridge: 'We don't know the time between Merwin's death and when the stone was taken...'")
+				time.sleep(1)
+				print(name + ": 'I'm impressed..you actually pay attention to the investigation.'")
+				time.sleep(1)
+				print("Coleridge: 'Hey kid..I still have my job for a reason.'")
+				time.sleep(1)
+				print(name + ": 'Father Cornealius, I've been wondering...why is it that Lawrance specifically you took under you.'")
+				time.sleep(1)
+				print("Father Cornealius: 'Excuse me?'")
+				time.sleep(1)
+				print(name + ": 'I'm asking you..of all the troubled youth in this city..why Lawrance?'")
+				time.sleep(1)
+				print(name + ": 'What would make you sacrifice so much for him? Even ...murder.'")
+				time.sleep(1)
+				print(name + ": 'Pardon me, if you killed Father Merwin that is...'")
+				time.sleep(1)
+				print("Father Cornealius: 'I...Lawrance came to me..and I would not turn him away...'")
+				time.sleep(1)
+				print(name + ": 'But why just Lawrance..certainly a man generous enough to give Coleridge money would take on more troubled youth...'")
+				time.sleep(1)
+				print("Father Cornealius: 'Are you questioning my generousity?'")
+				time.sleep(1)
+				print(name + ": 'No ..just your motivation..I think there's a reason you took Lawrance specifically...'")
+				time.sleep(1)
+				print(notepadEntry)
+				print(invArray)
+				print("TYPE IN THE EVIDENCE NAME")
+				Evidence3 = input("")
+
+				if(Evidence3 == "Miras Testimony on Father Cornealius"):
+					print(name + ": 'He's your son.'")
+					time.sleep(1)
+					print("Father Cornealius: '...'")
+					time.sleep(1)
+					print(name + ": 'You constantly defend him...speak for him...took him under your wing...'")
+					time.sleep(1)
+					print(name + ": 'I think of no other but a parent who would sacrifice so much...'")
+					time.sleep(1)
+					print("Father Cornealius: 'How ridiculous..I am a priest..can a man not simply be generous?! And none of this is truth!'")
+					time.sleep(1)
+					print("Father Cornealius: 'Nothing but rumors and theories!'")
+					time.sleep(1)
+					print("Father Cornealius: 'NOTHING!'")
+					time.sleep(1)
+					print(name + ": 'You just told us why you killed Father Merwin, Father Cornealius.'")
+					time.sleep(1)
+					print(name + ": 'Did Father Merwin come to the same conclusion? You fathered a bastard..and more important a troubled one.'")
+					time.sleep(1)
+					print(name + ": 'I bet, when Father Merwin question you why you defend Lawrance and took him in..he found out.'")
+					time.sleep(1)
+					print(name + ": 'You had a child and you know it.'")
+					time.sleep(1)
+					print("Lawrance: 'I am sorry father..but I must confess...I saw him ...I saw him hit Father Merwin...in that alley..'")
+					time.sleep(1)
+					print("[Lawrance begin to sob....]")
+					time.sleep(1)
+					print("Lawrance: 'I'm sorry...h-he said ...my father..he asked me to...to lie...I'm sorry!'")
+					time.sleep(1)
+					print("[Father Cornealius looks at Lawrance with wide eyes...he slowly sits and lower his head...]")
+					time.sleep(1)
+					print("Father Cornealius: '...Yes..I confess ..to all of it...I killed Father Merwin...I'm sorry I made you lie Lawrance..'")
+					time.sleep(1)
+					print("Father Cornealius: 'I...I killed him ..Father Merwin ..confronted me and...he was about to tell everyone..'")
+					time.sleep(1)
+					print("Father Cornealius: 'I..I could not allow him..so I took the brick and I smashed his head in...'")
+					time.sleep(1)
+					print("Father Cornealius: 'And then..I tried to hide the body..so I broke the basement lock to the general store..'")
+					time.sleep(1)
+					print("Father Cornealius: 'I only managed to hide his cloak...but his body..it was too heavy..there was..too much people...'")
+					time.sleep(1)
+					print("Father Cornealius: 'So I left him there...'")
+					time.sleep(1)
+					print("Captain Faust: 'Father Cornealius! You are under arrest for the murder of Father Merwin!'")
+					time.sleep(1)
+					print("[Captain Faust and several guards walks over to the priest and lift him off his chair as Lawrance cries...]")
+					time.sleep(1)
+					print("Coleridge: '....'")
+					time.sleep(1)
+					print("1. 'Coleridge..wanna get a drink?' \n2. 'Hold it!'")
+					final = input("")
+
+					if(final == "1"):
+						print("Coleridge: ''Hm? Yes course!")
+						time.sleep(1)
+						print(name + ": 'Yeah..your treat right?'")
+						time.sleep(1)
+						print("Coleridge: 'Ha! Of course this one's on me rookie..next one though'")
+						time.sleep(1)
+						print(name + ": 'We'll talk about that when it comes.'")
+						time.sleep(1)
+						print("Coleridge: 'Right!'")
+						time.sleep(1)
+						ending = "11"
+						area = "ENDING"
+					if(final == "2"):
+						print(name + ": 'HOLD IT!'")
+						time.sleep(1)
+						print("[Coleridge let out a smile...]")
+						time.sleep(1)
+						print("[The guards pauses]")
+						time.sleep(1)
+						print("[Lawrance's crying stops and he grinds his teeth....]")
+						time.sleep(1)
+						print(name + ": 'FATHER CORNEALIUS IS INNOCENT! LAWRANCE IS THE GUILTY ONE!'")
+						time.sleep(1)
+						print("Father Cornealius: 'No! I already confessed it was me!'")
+						time.sleep(1)
+						print(name + ": 'Father Cornealius..did you see Merwin's body?'")
+						time.sleep(1)
+						print("Father Cornealius: 'Of course! I was the one who identified him!'")
+						time.sleep(1)
+						print(name + ": 'My partner..did he tell you how he died?'")
+						time.sleep(1)
+						print("Father Cornealius: 'Yes! Struck in the head multiple times!'")
+						time.sleep(1)
+						print("Father Cornealius: 'What does this prove?!'")
+						time.sleep(1)
+						print(name + ": 'THAT YOUR CONFESSION CONTRADICT WHAT REALLY HAPPENED!'")
+						time.sleep(1)
+						print(name + ": 'THE REAL MURDER WEAPON IS NOT A BRICK...IT'S....'")
+						time.sleep(1)
+						print("")					
+						print(notepadEntry)
+						print(invArray)
+						print("The murder weapon itself is not in your inventory but there is something that links to the murder weapon...")
+						print("TYPE IN THE EVIDENCE NAME")
+						Evidence4 = input("")
+
+						if(Evidence4 == "White Solid Substance")
+						print(name + ": 'THE CANDLE IN THE CHURCH!'")
+						time.sleep(1)
+						print(name + ": 'FATHER MERWIN DID DIE OF BLUNT FORCE TRAUMA!'")
+						time.sleep(1)
+						print(name + ": 'BUT HIS FACE WAS BURNT BY SOMETHING HEATED!'")
+						time.sleep(1)
+						print(name + ": 'SUCH AS AN OBJECT LIKE A CANDLE AND THE WAX THAT HAS FALLEN ON TO FATHER MERWIN!'")
+						time.sleep(1)
+						print(name + ": 'UNLESS FATHER CORNEALIUS TRULY COMITTED THE CRIME, THE ONLY POSSIBLE PERSON WAS...LAWRANCE!!'")
+						time.sleep(1)
+						print("[Lawrance began to laugh...]")
+						time.sleep(1)
+						print("Lawrance: 'Damn..you can't just leave it alone? ....You can't even lie properly...you useless old fart...'")
+						time.sleep(1)
+						print("Lawrance: 'DAMN DAMN DAMN DAMN DAMN DAMN DAMN DaMn dAmN DAmn dAmn DaMn daMN WHY WON'T YOU LEAVE ME ALONE.?!'")
+						time.sleep(1)
+						print("Lawrance: 'YEAH I KILLED THAT IGNORANT SHIT, ALWAYS TELLING ME TO REPENT AND BOW BEFORE SOME ROCK'")
+						time.sleep(1)
+						print("Lawrance: 'THE ASS WAS SO IRRITATING...ALWAYS YELLING AND SHOUTING AND WHEN I CAME BACK FROM THAT MIDGET...'")
+						time.sleep(1)
+						print("Lawrance: 'HE STOOD THERE WITH THOSE BLOODY EYES JUST STARING..JUST STARING...I HATE IT!'")
+						time.sleep(1)
+						print("Lawrane: 'SO YEAH I DID THE SAME TO HIM WHAT I DID TO THOSE ANNOYING KIDS IN THE ORPHANAGE.'")
+						time.sleep(1)
+						print("Lawrance: 'HE ....THEY ...WON'T SHUT UP SO I DID IT FOR THEM!'")
+						time.sleep(1)
+						print("Lawrance: 'I SQUEEZE THOSE PUTRID NECK OF THEIR AND SQUEEZE AND SQUEEZE'")
+						time.sleep(1)
+						print("Lawrance: 'BUT THIS ASS..HE WASN'T A KID NO..SO I GRABBED THE CANDLE AND I HIT HIM!'")
+						time.sleep(1)
+						print("Lawrance: 'OVER AND OVER AGAIN TILL HIS FACE WAS BURNING!'")
+						time.sleep(1)
+						print("Lawrance: 'EACH TIME I HIT HIM HE GROWS MORE AND MORE SILENCE, HIS FACE BURNT FROM MY MIND!'")
+						time.sleep(1)
+						print("Lawrance: 'I KILLED HIM AND I'D DO IT OVER AND OVER AND OVER AGAIN IF I CAN!'")
+						time.sleep(1)
+						print("Lawrance: 'SCREW MERWIN, SCREW YOU, SCREW CORNEALIUS, ALL OF YOU CAN BURN!'")
+						time.sleep(1)
+						print("Captain Faust: 'ARREST HIM!'")
+						time.sleep(1)
+						print("Father Cornealius: '....How...how can it ....'")
+						time.sleep(1)
+						print("Lawrance: 'YOU OLD FART I'LL FINISH THE JOB...I'LL KILL YOU!'")
+						time.sleep(1)
+						print("Lawrance: 'YOU ABANDONED ME IN THAT ORPHANAGE! YOU THINK I DIDN'T KNOW?! I'LL KILL YOU!'")
+						time.sleep(1)
+						print("[Father Cornealius collaspes on his knee sobbing...]")
+						time.sleep(1)
+						print("[Captain Faust and a handful of guards restrain Lawrance and drags him away...]")
+						time.sleep(1)
+						print("Coleridge: 'Father Cornealius..you are under arrest for accessory to murder...'")
+						time.sleep(1)
+						print("[Another guard enters and drag Cornealius away...]")
+						time.sleep(1)
+						print(name + ": 'You knew didn't you?'")
+						time.sleep(1)
+						print("Coleridge: 'What? Ya think the captain kept me around for my charming personality?'")
+						time.sleep(1)
+						print(name + ": 'Hah...let's go ..I'm beat.'")
+						time.sleep(1)
+						print("Coleridge: 'Damn right. Dinner then my treat!'")
+						time.sleep(1)
+						print(name + ": 'Ha! You're generous ..we should invite Mira..and Eidar and probably Gendel too.'")
+						time.sleep(1)
+						print("Coleridge: 'The more the merrier! This is only a once in a lifetime thing kid. Ya know..you're not bad.'")
+						time.sleep(1)
+						print(name + ": 'Thanks Coleridge...now lets go..I'm gonna empty your coin pouch.'")
+						time.sleep(1)
+						print("Coleridge: 'Hell I was just gonna goto one of those cheap street store.'")
+						time.sleep(1)
+						print("Coleridge: 'But fine..since we're celebrating your first case close...as you wish.'")
+						time.sleep(1)
+						print(name + ": 'This will probably never happen again will it?'")
+						time.sleep(1)
+						print("Coleridge: 'Not in your lifetime rookie. Savior it.'")
+						time.sleep(1)
+						print(name + ": 'I will partner.'")
+						time.sleep(1)
+						print("Coleridge: 'Aye.'")
+						time.sleep(1)
+						ending = "12"
+						area = "ENDING"
+					else:
+						print("Lawrance: 'Heh...that's ridiculous...'")
+						time.sleep(1)
+						print(name + ": 'Wha...'")
+						time.sleep(1)
+						print("Father Cornealius: 'It seems...I am guilty after all..'")
+						time.sleep(1)
+						print(name + ": 'W-Wait I know what the murder weapon is!'")
+						time.sleep(1)
+						print("Captain Faust: 'It doesn't seem like you do...we have a confession and nothing else that says otherwise...'")
+						time.sleep(1)
+						print("Captain Faust: 'Father Cornealius...you are under arrest.'")
+						time.sleep(1)
+						ending = "11"
+						area = "ENDING"
+				else:
+					ending = "10"
+					area = "ENDING"			
+			else:
+				ending = "10"
+				area = "ENDING"
+		else: 
+			ending = "10"
+			area = "ENDING"
 #-----------------------ISOLATED AREAS----------------------------------
 	if(area == "100"):
 		print("____________________________________________")
@@ -3916,7 +4272,7 @@ while(True):
 			time.sleep(30)
 			break
 		if(ending == "6"):
-			print("You manage to close the case and arrest Eidar the homeless. Despite constant protest from Eidar he was nevertheless thrown into the dungeon and given a death sentence. You were promoted by Captain Faust but continue to work besides Coleridge to solve homocide. Several months following the case, shortly before Eidar's execution, he makes one last claim to deny his accused crime....")
+			print("You manage to close the case and arrest Eidar the homeless. Despite constant protest from Eidar he was nevertheless thrown into the dungeon and given a death sentence. You were promoted by Captain Faust but continue to work besides Coleridge to solve homicide. Several months following the case, shortly before Eidar's execution, he makes one last claim to deny his accused crime....")
 			time.sleep(30)
 			break
 		if(ending == "7"):
@@ -3929,5 +4285,43 @@ while(True):
 			break
 		if(ending == "9"):
 			print("Unable to find evidence against Lawrance, the case remain very much closed. Even if the evidence have present itself, it is already too late for Lawrance have long departed from Corona the day after his interview. No consequences were given providing that this is your first case and second day on the job, life goes on and you continue as a small guard in this big city alongside Coleridge....")
+			time.sleep(30)
+			break
+		if(ending == "10"):
+			print("Father Cornealius: 'You sadden me...you've accuse a member of the clergy..of killng another...'")
+			time.sleep(1)
+			print("Father Cornealius: 'Or worst, you accuse a child bearing a stigma for his past mistakes...'")
+			time.sleep(1)
+			print(name + ": 'Hold it father, I can explain.'")
+			time.sleep(1)
+			print("Father Cornealius: 'No ..you cannot. I grief for my friend and you dare hold this harresment..this farst in our face...'")
+			time.sleep(1)
+			print("Father Cornealius: 'I can tell you don't know what you're doing.'")
+			time.sleep(1)
+			print(name + ": 'Hold it one moment!'")
+			time.sleep(1)
+			print("Father Cornealius: 'What do you intent to hold me and Lawrance with hm? Theory and rumors?'")
+			time.sleep(1)
+			print("Father Cornealius: 'If you do not intent to arrest us..then goodbye.'")
+			time.sleep(1)
+			print("[Father Cornealius and Lawrance walks out...]")
+			time.sleep(1)
+			print("Coleridge: 'Can they just do that?'")
+			time.sleep(1)
+			print("Captain Faust: 'He's right...I-I don't see any worthy evidence...'")
+			time.sleep(1)
+			print(name + ": '..Shit.'")
+			time.sleep(1)
+			print("Coleridge: 'It's alright kid..no one can win them all.'")
+			time.sleep(1)
+			print("Unable to break Father Cornealius or Lawrance, the two walk free. Even after trying to pursuit the case, the two have left the city the day afterward. The case remains close and justice was never found but as Coleridge says, you can't win them all. Life continues....")
+			time.sleep(30)
+			break
+		if(ending == "11"):
+			print("Alas...justice have been claimed for Father Merwin...Father Cornealius sits in the dungeon awaiting the execution block...you were promoted as your first case on your first day was an immediate success. Coleridge however...refuse to continue as your partner. Unable to convince Coleridge other wise...you alone rise in rank as homicide investigators...justice was served...or..was it?")
+			time.sleep(30)
+			break
+		if(ending == "12"):
+			print("With justice found for Father Merwin, you were immediate promoted for a job well done on your first case, and second day. With Coleridge as your mentor, the two of you quickly rise as homicide investigators. What was an insiginifcant tale soon become a story of grandeur as you alongside your partner become one of the most famous pair in homicide investigation....")
 			time.sleep(30)
 			break
